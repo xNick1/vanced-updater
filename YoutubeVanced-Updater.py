@@ -3,8 +3,8 @@ from requests import get
 from bs4 import BeautifulSoup
 from re import compile
 
-size = os.path.getsize('version.txt')
-if size == 0:
+exists = os.path.exists("version.txt")
+if not exists:
 	oldver = "0"
 else:
 	f = open("version.txt", "r")
